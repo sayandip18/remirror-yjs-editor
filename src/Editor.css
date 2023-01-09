@@ -1,0 +1,16 @@
+.remirror-theme {
+    height: 50vh;
+}
+
+.remirror-editor-wrapper {
+    height: 90%;
+    margin: 0 20px 30px 20px;
+}
+
+.remirror-editor {
+    height: 100%;
+}
+
+.menuContainer {
+    display: flex;
+}
