@@ -16,6 +16,9 @@ import { Remirror, useRemirror, EditorComponent, useCommands, useActive } from '
 import 'remirror/styles/all.css';
 import './Editor.css'
 
+const ydoc = new Y.Doc();
+const provider = new WebrtcProvider('remirror-yjs-editor', ydoc);
+
 const Menu = () => {
     const commands = useCommands();
     const active = useActive();
@@ -51,8 +54,7 @@ const Menu = () => {
 };
 
 const Editor = () => {
-    const ydoc = new Y.Doc();
-    const provider = new WebrtcProvider('remirror-yjs-demo', ydoc);
+    
     const { manager, state } = useRemirror({
         extensions: () => [
             new BoldExtension(),
@@ -68,7 +70,7 @@ const Editor = () => {
         },
         // content: '<p>I love <b>Remirror</b></p>',
         // selection: 'start',
-        stringHandler: 'html',
+        // stringHandler: 'html',
     });
     return (
         <div className='remirror-theme'>
